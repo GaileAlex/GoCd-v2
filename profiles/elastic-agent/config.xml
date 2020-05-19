@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="136">
+  <server agentAutoRegisterKey="5714192c-185c-456a-b00e-a2a5a696ceaa" webhookSecret="5cea06cb-768e-4adb-9828-c45898012f9f" commandRepositoryLocation="default" serverId="461c1d63-d3db-4850-ae5d-34905cfd3c71">
+    <backup emailOnSuccess="true" emailOnFailure="true" />
+    <artifacts>
+      <artifactsDir>artifacts</artifactsDir>
+    </artifacts>
+  </server>
+  <elastic>
+    <agentProfiles>
+      <agentProfile id="Alpine_Agent" clusterProfileId="local-docker-cluster">
+        <property>
+          <key>Hosts</key>
+          <value />
+        </property>
+        <property>
+          <key>Command</key>
+          <value />
+        </property>
+        <property>
+          <key>Environment</key>
+          <value />
+        </property>
+        <property>
+          <key>Image</key>
+          <value>gocd/gocd-agent-alpine-3.9:v20.3.0</value>
+        </property>
+      </agentProfile>
+      <agentProfile id="DinD-Agent" clusterProfileId="local-docker-cluster">
+        <property>
+          <key>Image</key>
+          <value>gocd/docker-gocd-agent-dind:v20.2.0</value>
+        </property>
+        <property>
+          <key>Command</key>
+          <value>GO_SERVER_URL=http://SERVER_IP:8153/go</value>
+        </property>
+        <property>
+          <key>Environment</key>
+        </property>
+        <property>
+          <key>ReservedMemory</key>
+        </property>
+        <property>
+          <key>MaxMemory</key>
+        </property>
+        <property>
+          <key>Cpus</key>
+        </property>
+        <property>
+          <key>Mounts</key>
+        </property>
+        <property>
+          <key>Hosts</key>
+        </property>
+        <property>
+          <key>Privileged</key>
+          <value>true</value>
+        </property>
+      </agentProfile>
+    </agentProfiles>
+    <clusterProfiles>
+      <clusterProfile id="local-docker-cluster" pluginId="cd.go.contrib.elastic-agent.docker">
+        <property>
+          <key>enable_private_registry_authentication</key>
+          <value>false</value>
+        </property>
+        <property>
+          <key>private_registry_custom_credentials</key>
+          <value>false</value>
+        </property>
+        <property>
+          <key>pull_on_container_create</key>
+          <value>false</value>
+        </property>
+        <property>
+          <key>go_server_url</key>
+          <value>http://SERVER_IP:8153/go</value>
+        </property>
+        <property>
+          <key>environment_variables</key>
+        </property>
+        <property>
+          <key>max_docker_containers</key>
+          <value>5</value>
+        </property>
+        <property>
+          <key>docker_uri</key>
+          <value>unix:///var/run/docker.sock</value>
+        </property>
+        <property>
+          <key>auto_register_timeout</key>
+          <value>1</value>
+        </property>
+        <property>
+          <key>docker_ca_cert</key>
+        </property>
+        <property>
+          <key>docker_client_key</key>
+        </property>
+        <property>
+          <key>docker_client_cert</key>
+        </property>
+        <property>
+          <key>private_registry_server</key>
+        </property>
+        <property>
+          <key>private_registry_username</key>
+        </property>
+        <property>
+          <key>private_registry_password</key>
+        </property>
+      </clusterProfile>
+    </clusterProfiles>
+  </elastic>
+  <!-- <config-repos> 
+    <config-repo id="gocd-pipelines" pluginId="yaml.config.plugin">
+      <git url="https://github.com/SamiMe/gocd-docker.git"/>
+      <configuration>
+        <property>
+          <key>file_pattern</key>
+          <value>pipelines/*.yml</value>
+        </property>
+      </configuration>
+      <rules>
+        <allow action="refer" type="pipeline_group">*</allow>
+      </rules>
+    </config-repo>
+  </config-repos>
+  <pipelines group="GoCD_environment_Testing">
+    <pipeline name="TestDockerElasticAgent">
+      <materials>
+        <git url="hhttps://github.com/SamiMe/gocd-docker.git" shallowClone="true" />
+      </materials>
+      <stage name="TestingElasticAgent">
+        <jobs>
+          <job name="LsInDockerAgent" elasticProfileId="GoCD_Elastic_Docker_Agent">
+            <tasks>
+              <exec command="/bin/sh">
+                <arg>-c</arg>
+                <arg>ls</arg>
+                <arg>env</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </pipelines> -->
+</cruise>
