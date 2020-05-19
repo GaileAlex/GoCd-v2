@@ -1,6 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="136">
-  <server agentAutoRegisterKey="5714192c-185c-456a-b00e-a2a5a696ceaa" webhookSecret="5cea06cb-768e-4adb-9828-c45898012f9f" commandRepositoryLocation="default" serverId="461c1d63-d3db-4850-ae5d-34905cfd3c71">
+  <server agentAutoRegisterKey="323040d4-f2e4-4b8a-8394-7a2d122054d1" webhookSecret="3d5cd2f5-7fe7-43c0-ba34-7e01678ba8b6" commandRepositoryLocation="default" serverId="60f5f682-5248-4ba9-bb35-72c92841bd75">
+    <!--<security>
+      <authConfigs>
+        <authConfig id="9cad79b0-4d9e-4a62-829c-eb4d9488062f" pluginId="cd.go.authentication.passwordfile">
+           <property>
+            <key>PasswordFilePath</key>
+            <value>config/password.properties</value>
+          </property>
+        </authConfig>
+      </authConfigs>
+      <roles>
+        <role name="xyz" />
+      </roles>
+      <admins>
+        <user>jez</user>
+        <user>admin</user>
+      </admins>
+    </security> -->
     <backup emailOnSuccess="true" emailOnFailure="true" />
     <artifacts>
       <artifactsDir>artifacts</artifactsDir>
