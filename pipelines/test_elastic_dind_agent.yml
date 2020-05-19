@@ -16,6 +16,8 @@ pipelines:
           jobs: # jobs are ran in parallel
             basic_ls: # name of job
               elastic_profile_id: DinD-Agent
+              tasks:
+                - exec:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
