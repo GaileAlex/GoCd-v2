@@ -113,7 +113,7 @@
       </clusterProfile>
     </clusterProfiles>
   </elastic>
-  <!-- <config-repos> 
+  <config-repos> 
     <config-repo id="gocd-pipelines" pluginId="yaml.config.plugin">
       <git url="https://github.com/SamiMe/gocd-docker.git"/>
       <configuration>
@@ -126,7 +126,7 @@
         <allow action="refer" type="pipeline_group">*</allow>
       </rules>
     </config-repo>
-  </config-repos> -->
+  </config-repos>
   <!-- <pipelines group="GoCD_environment_Testing">
   <pipelines group="Test_Static_Agent">
     <pipeline name="TestDockerStaticAgent">
