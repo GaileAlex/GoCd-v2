@@ -23,7 +23,7 @@ services:
     environment:
       - GO_SERVER_URL=http://gocd-server:8153/go
       - AGENT_AUTO_REGISTER_KEY=5714192c-185c-456a-b00e-a2a5a696ceaa
-      - AGENT_AUTO_REGISTER_RESOURCES=GoCD_Static_Agent
+      - AGENT_AUTO_REGISTER_RESOURCES=Alpine_Static_Agent
 
 volumes:
   gocd-server-data:

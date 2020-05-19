@@ -126,15 +126,16 @@
         <allow action="refer" type="pipeline_group">*</allow>
       </rules>
     </config-repo>
-  </config-repos>
-  <pipelines group="GoCD_environment_Testing">
-    <pipeline name="TestDockerElasticAgent">
+  </config-repos> -->
+  <!-- <pipelines group="GoCD_environment_Testing">
+  <pipelines group="Test_Static_Agent">
+    <pipeline name="TestDockerStaticAgent">
       <materials>
         <git url="hhttps://github.com/SamiMe/gocd-docker.git" shallowClone="true" />
       </materials>
-      <stage name="TestingElasticAgent">
+      <stage name="TestingStaticAgent">
         <jobs>
-          <job name="LsInDockerAgent" elasticProfileId="GoCD_Elastic_Docker_Agent">
+          <job name="LsInAlpineAgent" elasticProfileId="Alpine_Static_Agent">
             <tasks>
               <exec command="/bin/sh">
                 <arg>-c</arg>
@@ -147,4 +148,23 @@
       </stage>
     </pipeline>
   </pipelines> -->
+  <pipelines group="Test_Static_Agent">
+    <pipeline name="Test_Static_Agent">
+      <materials>
+        <git url="https://github.com/SamiMe/gocd-docker.git" />
+      </materials>
+      <stage name="TestingStaticAgent">
+        <jobs>
+          <job name="LsInAlpineAgent">
+            <tasks>
+              <exec command="ls" />
+            </tasks>
+            <resources>
+              <resource>Alpine_Static_Agent</resource>
+            </resources>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </pipelines>
 </cruise>
