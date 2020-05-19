@@ -29,14 +29,14 @@
       <agentProfile id="DinD-Agent" clusterProfileId="local-docker-cluster">
         <property>
           <key>Image</key>
-          <value>gocd/docker-gocd-agent-dind:v20.2.0</value>
+          <value>gocd/gocd-agent-docker-dind:v20.3.0</value>
         </property>
         <property>
           <key>Command</key>
-          <value>GO_SERVER_URL=http://SERVER_IP:8153/go</value>
         </property>
-        <property>
+       <property>
           <key>Environment</key>
+          <value>GO_SERVER_URL=http://SERVER_IP:8153/go</value>
         </property>
         <property>
           <key>ReservedMemory</key>
@@ -127,27 +127,6 @@
       </rules>
     </config-repo>
   </config-repos>
-  <!-- <pipelines group="GoCD_environment_Testing">
-  <pipelines group="Test_Static_Agent">
-    <pipeline name="TestDockerStaticAgent">
-      <materials>
-        <git url="hhttps://github.com/SamiMe/gocd-docker.git" shallowClone="true" />
-      </materials>
-      <stage name="TestingStaticAgent">
-        <jobs>
-          <job name="LsInAlpineAgent" elasticProfileId="Alpine_Static_Agent">
-            <tasks>
-              <exec command="/bin/sh">
-                <arg>-c</arg>
-                <arg>ls</arg>
-                <arg>env</arg>
-              </exec>
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-    </pipeline>
-  </pipelines> -->
   <pipelines group="Test_Static_Agent">
     <pipeline name="Test_Static_Agent">
       <materials>
