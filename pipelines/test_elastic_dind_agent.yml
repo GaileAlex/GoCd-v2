@@ -14,7 +14,7 @@ pipelines:
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel
-            basic_ls: # name of job
+            docker_command: # name of job
               elastic_profile_id: DinD-Agent
               tasks:
                 - exec:
@@ -27,7 +27,7 @@ pipelines:
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel
-            buildjob-docker-image: # name of job
+            echo_something: # name of job
               elastic_profile_id: DinD-Agent
               tasks:
                - exec:
