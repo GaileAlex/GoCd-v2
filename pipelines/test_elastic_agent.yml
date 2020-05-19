@@ -1,5 +1,5 @@
 pipelines:
-  Test_Elastic: # name of pipeline
+  Test_Elastic_Agent: # name of pipeline
     group: Testing_Elastic_Agent
     materials:
       servicegit: # name of material
