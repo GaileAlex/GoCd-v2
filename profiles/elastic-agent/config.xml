@@ -52,8 +52,6 @@
         </property>
        <property>
           <key>Environment</key>
-          <value>GO_SERVER_URL=http://gocd-server:8153/go</value>
-          <value>GO_EA_SERVER_URL=http://gocd-server:8154/go</value>
         </property>
         <property>
           <key>ReservedMemory</key>
