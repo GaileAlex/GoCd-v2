@@ -10,7 +10,7 @@ pipelines:
         destination: gitmaterialdir
         auto_update: true
     stages:
-      - docker: # name of stage
+      - ls_elastic: # name of stage
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel

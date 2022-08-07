@@ -1,4 +1,4 @@
-version: '2'
+version: '3.8'
 services:
   gocd-server:
     image: gocd/gocd-server:v22.1.0
@@ -12,6 +12,7 @@ services:
       - AGENT_KEY=${GOCD_AGENT_KEY}
       - GOCD_ADMIN_USER=${GOCD_ADMIN_USER}
       - GOCD_ADMIN_PW=${GOCD_ADMIN_PW}
+#      - GO_EA_SERVER_URL=http://172.19.0.1:8154/go
       - GOCD_PLUGIN_INSTALL_docker-elastic-agents=https://github.com/gocd-contrib/docker-elastic-agents-plugin/releases/download/v3.2.0-255-exp/docker-elastic-agents-3.2.0-255.jar
     ports:
       - 8153:8153

@@ -25,10 +25,10 @@
   <elastic>
     <agentProfiles>
       <agentProfile id="Alpine_Agent" clusterProfileId="local-docker-cluster">
-        <property>
+<!--        <property>
           <key>Hosts</key>
           <value />
-        </property>
+        </property>-->
         <property>
           <key>Command</key>
           <value />
@@ -39,7 +39,7 @@
         </property>
         <property>
           <key>Image</key>
-          <value>gocd/gocd-agent-alpine-3.9:v20.3.0</value>
+          <value>gocd/gocd-agent-alpine-3.14:v22.1.0</value>
         </property>
       </agentProfile>
       <agentProfile id="DinD-Agent" clusterProfileId="local-docker-cluster">
@@ -58,7 +58,7 @@
         </property>
         <property>
           <key>MaxMemory</key>
-          <value>1G</value>
+          <value>4G</value>
         </property>
         <property>
           <key>Cpus</key>
@@ -66,9 +66,9 @@
         <property>
           <key>Mounts</key>
         </property>
-        <property>
+<!--        <property>
           <key>Hosts</key>
-        </property>
+        </property>-->
         <property>
           <key>Privileged</key>
           <value>true</value>
@@ -91,7 +91,7 @@
         </property>
         <property>
           <key>go_server_url</key>
-          <value>http://SERVER_IP:8153/go</value>
+          <value>http://172.27.32.1:8153/go</value>
         </property>
         <property>
           <key>environment_variables</key>
@@ -101,6 +101,10 @@
           <value>5</value>
         </property>
         <property>
+            <key>ssl-verification_mod</key>
+            <value>false</value>
+        </property>
+        <property>
           <key>docker_uri</key>
           <value>unix:///var/run/docker.sock</value>
         </property>
@@ -108,10 +112,10 @@
           <key>auto_register_timeout</key>
           <value>1</value>
         </property>
-        <property>
+<!--        <property>
           <key>docker_ca_cert</key>
-        </property>
-        <property>
+        </property>-->
+<!--        <property>
           <key>docker_client_key</key>
         </property>
         <property>
@@ -125,7 +129,7 @@
         </property>
         <property>
           <key>private_registry_password</key>
-        </property>
+        </property>-->
       </clusterProfile>
     </clusterProfiles>
   </elastic>
