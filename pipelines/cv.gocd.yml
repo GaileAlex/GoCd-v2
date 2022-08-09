@@ -1,0 +1,24 @@
+pipelines:
+  cv:
+    group: cv
+    label_template: "1.0.${COUNT}"
+    locking: off
+    materials:
+      cv:
+        git: https://github.com/GaileAlex/cv.git
+        branch: master
+        destination: ansible-config
+    stages:
+      - build:
+          jobs:
+            update-gocd-config:
+              elastic_profile_id: "Alpine_Agent"
+              tasks:
+                - exec:
+                    working_directory: ansible-config
+                    command: bash
+                - exec:
+                    command: bash
+                    run_if: failed
+                    arguments:
+                      - -c
