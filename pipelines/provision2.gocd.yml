@@ -1,5 +1,5 @@
 pipelines:
-  provision-gocd-server-config:
+  provision2-gocd-server-config:
     group: provision
     label_template: "1.0.${COUNT}"
     locking: off
