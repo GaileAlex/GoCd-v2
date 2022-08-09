@@ -1,11 +1,11 @@
 pipelines:
-  Test_DinD_Agent: # name of pipeline
+  Test_Elastic: # name of pipeline
     group: Testing_Elastic
     materials:
       servicegit: # name of material
         git: https://github.com/GaileAlex/GoCd-v2.git
         whitelist:
-          - ./pipelines/test_elastic_dind_agent.yml
+          - ./pipelines/test_elastic_agent.yml
         branch: master
         destination: gitmaterialdir
         auto_update: true
@@ -14,31 +14,31 @@ pipelines:
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel
-            docker_command: # name of job
-              elastic_profile_id: DinD-Agent
+            basic_ls: # name of job
+              elastic_profile_id: Alpine_Agent
               tasks:
-                - exec:
+               - exec:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "docker --version"
+                    - "ls"
       - echo_something: # name of stage
           clean_workspace: true
           #approval: manual
           jobs: # jobs are ran in parallel
-            echo_something: # name of job
-              elastic_profile_id: DinD-Agent
+            buildjob-docker-image: # name of job
+              elastic_profile_id: Alpine_Agent
               tasks:
                - exec:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "echo 'DinD Elastic Agent is working'"
+                    - "echo 'Elastic Agent is working'"
                - exec:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "ls && pwd"
+                    - "pwd"

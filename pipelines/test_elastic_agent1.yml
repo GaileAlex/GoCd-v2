@@ -1,9 +1,9 @@
 pipelines:
   Test_Elastic_Agent: # name of pipeline
-    group: Testing_Elastic_Agent
+    group: Testing_Elastic
     materials:
       servicegit: # name of material
-        git: https://github.com/SamiMe/gocd-docker.git
+        git: https://github.com/GaileAlex/GoCd-v2.git
         whitelist:
           - ./pipelines/test_elastic_agent.yml
         branch: master
