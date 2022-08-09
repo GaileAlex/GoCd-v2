@@ -11,7 +11,7 @@ pipelines:
     stages:
       - build:
           jobs:
-            update-gocd-config:
+            any:
               elastic_profile_id: "Alpine_Agent"
               tasks:
                 - exec:
