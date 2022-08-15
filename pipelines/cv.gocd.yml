@@ -18,8 +18,7 @@ pipelines:
                     working_directory: ansible-config
                     command: bash
                 - exec:
-                    command: bash
-                    run_if: failed
+                    command: /bin/sh
                     arguments:
                       - -c
                       - cv.sh:/docker-entrypoint.d/cv.sh
