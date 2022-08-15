@@ -18,7 +18,7 @@ pipelines:
                     working_directory: ansible-config
                     command: bash
                 - exec:
-                    command: /bin/sh
+                    command: bash
                     arguments:
                       - -c
                       - docker-compose up
