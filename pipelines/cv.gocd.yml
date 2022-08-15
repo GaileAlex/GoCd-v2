@@ -26,4 +26,8 @@ pipelines:
                       - docker run 
                         -it
                         -v /var/run/docker.sock:/var/run/docker.sock
+                - exec:
+                    working_directory: ansible-config
+                    command: bash
+                    arguments:
                       - docker-compose up
