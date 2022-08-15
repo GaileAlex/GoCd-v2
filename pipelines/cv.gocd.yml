@@ -22,4 +22,4 @@ pipelines:
                     run_if: failed
                     arguments:
                       - -c
-                      - docker run
+                      - docker-compose up
