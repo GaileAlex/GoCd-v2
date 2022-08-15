@@ -23,6 +23,6 @@ pipelines:
                     command: bash
                     arguments:
                       - -c
-                      - docker run --net=host
+                      - docker run
                         -v /var/run/docker.sock:/var/run/docker.sock
                       - docker-compose up
