@@ -1,0 +1,33 @@
+pipelines:
+  cv:
+    group: cv
+    label_template: "1.0.${COUNT}"
+    locking: off
+    materials:
+      cv:
+        git: https://github.com/GaileAlex/cv.git
+        branch: master
+        destination: ansible-config
+    parameters:
+      PROJECT_DIR: "/usr/bin/cv"
+    stages:
+      - build:
+          jobs:
+            update-gocd-config:
+              profile_id: "Test_Static_Agent"
+              tasks:
+                - exec:
+                    working_directory: ansible-config
+                    command: bash
+                - exec:
+                    command: bash
+                    arguments:
+                      - -c
+                      - docker run 
+                        -it
+                        -v /var/run/docker.sock:/var/run/docker.sock
+                - exec:
+                    working_directory: ansible-config
+                    command: bash
+                    arguments:
+                      - docker-compose up
