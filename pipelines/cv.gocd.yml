@@ -12,7 +12,7 @@ pipelines:
       - build:
           jobs:
             update-gocd-config:
-              elastic_profile_id: "Alpine_Agent"
+              elastic_profile_id: "DinD-Agent"
               tasks:
                 - exec:
                     working_directory: ansible-config
