@@ -22,3 +22,4 @@ pipelines:
                     run_if: failed
                     arguments:
                       - -c
+                      - docker push gamesys-engage-poker-docker.artifactory.gamesys.co.uk/poker/gocd-agent-base-maven-3.6.3-java-8:v1.0.$GO_PIPELINE_COUNTER
