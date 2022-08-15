@@ -1,5 +1,5 @@
 pipelines:
-  cv:
+  cv-static:
     group: cv
     label_template: "1.0.${COUNT}"
     locking: off
