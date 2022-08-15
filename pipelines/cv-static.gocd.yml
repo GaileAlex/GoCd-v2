@@ -1,6 +1,6 @@
 pipelines:
   cv-static:
-    group: cv
+    group: Test_Static_Agent
     label_template: "1.0.${COUNT}"
     locking: off
     materials:
@@ -14,7 +14,7 @@ pipelines:
       - build:
           jobs:
             update-gocd-config:
-              profile_id: "Test_Static_Agent"
+              profile_id: "Alpine_Static_Agent"
               tasks:
                 - exec:
                     working_directory: ansible-config
