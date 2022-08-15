@@ -19,13 +19,7 @@ pipelines:
                 - exec:
                     working_directory: ansible-config
                     command: bash
-                - exec:
-                    command: bash
-                    arguments:
-                      - -c
-                      - docker run 
-                        -it
-                        -v /var/run/docker.sock:/var/run/docker.sock
+
                 - exec:
                     working_directory: ansible-config
                     command: bash
