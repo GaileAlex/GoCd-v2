@@ -21,4 +21,4 @@ pipelines:
                     command: /bin/sh
                     arguments:
                       - -c
-                      - cv.sh:/docker-entrypoint.d/cv.sh
+                      - docker-compose up
