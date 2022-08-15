@@ -14,7 +14,7 @@ pipelines:
       - build:
           jobs:
             update-gocd-config:
-              elastic_profile_id: "DinD-Agent"
+              elastic_profile_id: "Alpine_Agent"
               tasks:
                 - exec:
                     working_directory: ansible-config
@@ -23,6 +23,6 @@ pipelines:
                     command: bash
                     arguments:
                       - -c
-                      - docker run
+                      - docker run -it
                         -v /var/run/docker.sock:/var/run/docker.sock
                       - docker-compose up
