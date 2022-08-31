@@ -12,6 +12,7 @@ pipelines:
       PROJECT_DIR: "/usr/bin/cv"
     stages:
       - build:
+          approval: manual
           jobs:
             update-gocd-config:
               profile_id: "Alpine_Static_Agent"
