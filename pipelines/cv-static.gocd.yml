@@ -25,11 +25,6 @@ pipelines:
 #                    command:  docker-compose up
                 - exec:
                     command: bash
-                    arguments:
-                      - -c
-                      - docker build -t cv:latest .
-                - exec:
-                    command: bash
                     working_directory: ansible-config
                     arguments:
                       - -c
