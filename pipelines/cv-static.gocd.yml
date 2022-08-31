@@ -16,10 +16,27 @@ pipelines:
             update-gocd-config:
               profile_id: "Alpine_Static_Agent"
               tasks:
-                - exec:
-                    working_directory: ansible-config
-                    command: bash
+#                - exec:
+#                    working_directory: ansible-config
+#                    command: bash
+#
+#                - exec:
+#                    working_directory: ansible-config
+#                    command:  docker-compose up
 
                 - exec:
-                    working_directory: ansible-config
-                    command:  docker-compose up
+                    command: bash
+                    working_directory: gitmaterialdir
+                    arguments:
+                      - -c
+                      - echo 'Elastic Agent is start'
+                      - docker build -t cv:latest .
+                      - echo 'Elastic Agent is working'
+                - exec:
+                    command: bash
+                    working_directory: gitmaterialdir
+                    arguments:
+                      - "-c"
+                      - docker run --rm
+                        -v $(pwd)/.secrets:/runner/.secrets
+                        -v $(pwd)/README.md:/runner/.secrets/README.md

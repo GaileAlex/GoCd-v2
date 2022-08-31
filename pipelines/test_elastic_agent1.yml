@@ -34,11 +34,15 @@ pipelines:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
-                    - "-c"
-                    - "echo 'Elastic Agent is working'"
+                    - -c
+                    - echo 'Elastic Agent is start'
+                    - docker build -t GoCd-v2:latest .
+                    - echo 'Elastic Agent is working'
                - exec:
                    command: bash
                    working_directory: gitmaterialdir
                    arguments:
                     - "-c"
-                    - "pwd"
+                    - docker run --rm
+                      -v $(pwd)/.secrets:/runner/.secrets
+                      -v $(pwd)/README.md:/runner/.secrets/README.md

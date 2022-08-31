@@ -11,7 +11,7 @@ pipelines:
     parameters:
       PROJECT_DIR: "/usr/bin/cv"
     stages:
-      - build:
+      - create:
           jobs:
             update-gocd-config:
               elastic_profile_id: "Alpine_Agent"
