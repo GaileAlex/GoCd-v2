@@ -15,6 +15,8 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             basic_ls: # name of job
+              resources:
+                - nova
               elastic_profile_id: kube
               tasks:
                - exec:
@@ -28,7 +30,7 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             buildjob-docker-image: # name of job
-              elastic_profile_id: Alpine_Agent
+              elastic_profile_id: kube
               tasks:
                - exec:
                    command: bash
