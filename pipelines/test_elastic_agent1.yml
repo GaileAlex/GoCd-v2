@@ -1,6 +1,6 @@
 pipelines:
   Test_Elastic_Agent: # name of pipeline
-    group: Testing_Elastic
+    group: Testing_Cube_Elastic
     materials:
       servicegit: # name of material
         git: https://github.com/GaileAlex/cv.git
