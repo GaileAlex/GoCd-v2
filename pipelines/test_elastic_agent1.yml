@@ -15,7 +15,7 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             basic_ls: # name of job
-              elastic_profile_id: kube
+              elastic_profile_id: "Alpine_Static_Agent"
               tasks:
                - exec:
                    command: bash
@@ -28,7 +28,7 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             buildjob-docker-image: # name of job
-              elastic_profile_id: test-kube-profile
+              elastic_profile_id: "Alpine_Static_Agent"
               tasks:
                - exec:
                    command: bash
