@@ -91,7 +91,7 @@
         </property>
         <property>
           <key>go_server_url</key>
-          <value>http://10.224.184.254:8153/go</value>
+          <value>http://172.17.176.1:8153/go</value>
         </property>
         <property>
           <key>environment_variables</key>
