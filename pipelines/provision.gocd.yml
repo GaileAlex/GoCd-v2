@@ -5,7 +5,7 @@ pipelines:
     locking: off
     materials:
       poker-ci-provision:
-        git: https://github.com/GaileAlex/GoCd-v2.git
+        git: https://github.com/GaileAlex/cv.git
         branch: master
         destination: ansible-config
     stages:

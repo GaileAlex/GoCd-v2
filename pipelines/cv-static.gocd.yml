@@ -5,7 +5,7 @@ pipelines:
     locking: off
     materials:
       cv:
-        git: https://github.com/GaileAlex/cv.git
+        git: https://github.com/GaileAlex/GoCd-v2.git
         branch: master
         destination: ansible-config
     parameters:

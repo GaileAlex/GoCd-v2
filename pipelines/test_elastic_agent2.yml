@@ -3,7 +3,7 @@ pipelines:
     group: Testing
     materials:
       servicegit: # name of material
-        git: https://github.com/GaileAlex/GoCd-v2.git
+        git: https://github.com/GaileAlex/cv.git
         whitelist:
           - ./pipelines/test_elastic_agent.yml
         branch: master

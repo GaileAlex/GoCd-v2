@@ -3,7 +3,7 @@ pipelines:
     group: Testing_Elastic
     materials:
       servicegit: # name of material
-        git: https://github.com/GaileAlex/GoCd-v2.git
+        git: https://github.com/GaileAlex/cv.git
         whitelist:
           - ./pipelines/test_elastic_agent.yml
         branch: master
@@ -15,7 +15,7 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             basic_ls: # name of job
-              elastic_profile_id: Alpine_Agent
+              elastic_profile_id: kube
               tasks:
                - exec:
                    command: bash
