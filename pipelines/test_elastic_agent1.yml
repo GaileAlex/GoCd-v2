@@ -15,8 +15,6 @@ pipelines:
           #approval: manual
           jobs: # jobs are ran in parallel
             basic_ls: # name of job
-              resources:
-                - nova
               elastic_profile_id: kube
               tasks:
                - exec:
